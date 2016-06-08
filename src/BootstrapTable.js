@@ -238,14 +238,14 @@ class BootstrapTable extends Component {
     const columns = this.getColumnsDescription(this.props);
     const sortInfo = this.store.getSortInfo();
     const pagination = this.renderPagination();
-    const ToolBar = this.props.toolBar; // XXX or default to this.renderToolBar();
+    const CustomToolBar = this.props.toolBar; // XXX or default to this.renderToolBar();
     const tableFilter = this.renderTableFilter(columns);
     const isSelectAll = this.isSelectAll();
     let sortIndicator = this.props.options.sortIndicator;
     if (typeof this.props.options.sortIndicator === 'undefined') sortIndicator = true;
     return (
       <div className='react-bs-table-container' style={ this.props.containerStyle }>
-        <ToolBar />
+        <CustomToolBar />
         <div className='react-bs-table' ref='table' style={ { ...style, ...this.props.tableStyle } }
             onMouseEnter={ this.handleMouseEnter }
             onMouseLeave={ this.handleMouseLeave }>
